@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'ResteasyTDD'
+version '1.0-SNAPSHOT'
+
+// dependencies version and config definitions
+apply from: 'gradle/dependencies.gradle'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile libs.junit
+
+    compile libs.resteasy
+    compileOnly libs.lombok
+
+    testCompile files("$projectDir/lib/resteasy-test-util-0.1.1.jar")
+
+    testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.0-beta.5'
+    testCompile group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.0-beta.5'
+
+}

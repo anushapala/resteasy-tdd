@@ -1,0 +1,14 @@
+ext.libVersions = [
+        resteasy: '3.5.1.Final',
+        junit   : '4.12',
+        lombok  : '1.18.0'
+]
+
+ext.libs = [
+        resteasy: [
+                "org.jboss.resteasy:resteasy-jaxrs:${libVersions.resteasy}",
+                "org.jboss.resteasy:resteasy-jackson2-provider:${libVersions.resteasy}"
+        ],
+        junit   : "junit:junit:${libVersions.junit}",
+        lombok  : "org.projectlombok:lombok:${libVersions.lombok}",
+]
